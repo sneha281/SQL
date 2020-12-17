@@ -1,0 +1,102 @@
+  -----------------SQL COMMANDS----------------------
+//show database
+show databases;
+create database abc; //create database
+drop database abc; //delete database
+
+create table tablename
+(
+column name data_type,
+column name data_type;)
+
+desc tablename;  //show table
+
+drop table tablename; //  delete table
+
+//create table name of student
+create table student ( id int , name varchar(50));
+
+//insert value on student table
+insert into student (id , name) values(3, 'sneha');
+
+//show table
+select * from students;
+
+// delete table
+drop table student;
+
+//add one more column in table
+alter table students add class int;
+desc students;
+select * from students;
+insert into students (id , name, class ) values (2,'sneha' ,3);
+desc students;
+
+//what is primary key  it must contains unique values and cannot contain null values
+create table snehaa ( id int not null ,name varchar(30) PRIMARYKEY(id)  );
+insert into students (id , name, class) values (1, 'sneha', 4);
+
+//auto increment it allows generate unique number automatic
+create table snehaa (id int not null AUTO_INCREMENT,name varchar(30) PRIMARY KEY(id)  );
+
+//create read update delete
+create table student(id int not null , name varchar(20) PRIMARY KEY(id)  );
+
+//where caluse in MySQL
+the where clause is used to filter records
+select * from students where age = 15;
+
+//for update 
+update students SET age = 23 
+WHERE name = 'sneha';
+//delete any one row
+DELETE from student where name = 'sneha';
+
+//order by- the order by keyword is used to sofrt the elements inascending or discending order.
+select distinct age from studen order by age;
+
+//limit keyword - like operator - the like operator is used in where clause to search for a specified pattern in  a column
+select name from students where name like '%(we remeber name wo)%';
+
+//aggregate function
+COUNT(), MAX(), MIN(), AVG(), SUM()
+select max(age) from students;
+select min(age) from students;
+select sum(age) from students;
+select count(id) from students;
+
+//MySql Logical opeartor
+the logical operator are those that afre true or false. they return a true or false values 
+select * from students where age = 25;
+select * from students where age! = 25;
+select *  from students where age between 22 and 25;
+
+select * from students where name = 'sneha' && name ='shivi';
+select * from students where name in ('sneha', 'shivi');
+
+//String function
+select concat('sneha', ,'gupta')as fullname;
+select reverse
+('sneha') as reverse;
+//date
+create tabe date(name varchar(44), dob date, dot time, bt datetime);
+insert into date values('sneha' , 2002-20-02, 09:45:45);
+select * from date
+insert into date values('sneha' , curdate(), curtime(), now());
+select * from date
+//foreign key
+//use primary key to another
+create table students (cid int not null auto_increment primary  key, cname varchar(34), email varchar(100));
+desc students;
+
+
+
+
+
+
+
+
+
+
+
+
